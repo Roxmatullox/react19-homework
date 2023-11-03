@@ -15,14 +15,14 @@ interface User {
 }
 
 interface EducationIntercafe {
-  description: string;
-  endDate: string;
-  level: string;
-  name: string;
-  startDate: string;
-  user: User | null;
-  __v: number;
-  _id: string;
+  description?: string,
+  endDate?: string,
+  level?: string,
+  name?: string,
+  startDate?: string,
+  user?: User | null,
+  __v?: number,
+  _id?: string,
 }
 
 const Card2 = ({_id , name , level , user , description, endDate, startDate} : EducationIntercafe) => {
@@ -30,11 +30,11 @@ const Card2 = ({_id , name , level , user , description, endDate, startDate} : E
     <Card
       hoverable
     >
-      <Meta title={`Name : ${name}`} description={`Description : ${description.slice(0,20)}...`} />
+      <Meta title={`Name : ${name}`} description={`Description : ${description?.slice(0,20)}...`} />
       <p className={_id}>User : {user?.username}</p>
       <p className={_id}>Level : {level}</p>
-      <p className={_id}>Start date : {startDate.split("T")[0]}</p>
-      <p className={_id}>End date : {endDate.split("T")[0]}</p>
+      <p className={_id}>Start date : {startDate?.split("T")[0]}</p>
+      <p className={_id}>End date : {endDate?.split("T")[0]}</p>
     </Card>
   )
 }
